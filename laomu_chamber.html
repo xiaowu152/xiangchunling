@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>祭坛密室</title>
+<style>
+  body {
+    background: #f5f0e8;
+    color: #3a3a3a;
+    font-family: "Microsoft YaHei", "苹方", sans-serif;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    line-height: 1.8;
+  }
+  a { color: #6b8e23; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  button {
+    background: #8b4513;
+    border: none;
+    color: #fff;
+    padding: 8px 20px;
+    margin: 10px 0;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  button:hover { background: #6b3410; }
+  .progress { background: #e0d6c8; height: 18px; width: 100%; margin: 10px 0 20px 0; border-radius: 3px; }
+  .progress-bar { background: #8b4513; width: 80%; height: 18px; text-align: center; color: #fff; line-height: 18px; font-size: 12px; border-radius: 3px; }
+  hr { border: none; border-top: 1px dashed #c4b59a; }
+  .card { background: #fdfaf5; border: 1px solid #e0d6c8; padding: 15px 20px; margin: 20px 0; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<div class="progress"><div class="progress-bar" id="progressBar">80%</div></div>
+
+<h1>🕯️ 香椿老母祭坛</h1>
+
+<div class="card">
+  <!-- AI生图占位：祭坛地窖 -->
+  <img src="placeholder_altar.jpg" alt="地窖祭坛"
+  style="width:100%; max-width:600px; margin:15px 0; border:1px solid #c4b59a;"
+  title="Prompt: 一个昏暗的地下室祭坛，中间是一口冒着黑色药汤的大陶缸，周围石壁刻满古老图腾，几根蜡烛在燃烧，空气中有淡淡的烟雾，写实暗调摄影，中式民俗恐怖美学，但不出现血腥或鬼怪，仅靠光影营造压迫感。">
+
+  <p>阴暗潮湿的地窖，空气中弥漫着腐烂香椿的气味。石壁上刻满献祭图腾，正中央是一口黑陶大缸，里面翻滚着黑色药汤。</p>
+  <p>药婆陈阿婆站在一旁，手里端着一碗“椿引汤”。村长王长贵冷笑：“你爷爷不肯喝，那就你来。”</p>
+</div>
+
+<div class="card">
+  <p><strong>你的选择：</strong></p>
+  <label><input type="radio" name="choice" value="resist"> ① 反抗并呼叫警方（需已提交举报）</label><br>
+  <label><input type="radio" name="choice" value="drink"> ② 假意喝下，伺机寻找爷爷</label><br>
+  <button onclick="resolveEnding()">决定命运</button>
+</div>
+
+<div id="endingResult" class="card" style="display:none;"></div>
+
+<script>
+function hasReported() {
+  let cookies = document.cookie.split(';');
+  for(let c of cookies) {
+    if(c.trim().startsWith('reported=')) {
+      return c.trim().split('=')[1] === 'true';
+    }
+  }
+  return false;
+}
+
+function resolveEnding() {
+  let choice = document.querySelector('input[name="choice"]:checked');
+  if(!choice) { alert('请先选择一个选项'); return; }
+  let val = choice.value;
+  let reported = hasReported();
+  let resultDiv = document.getElementById('endingResult');
+  resultDiv.style.display = 'block';
+
+  if(val === 'resist' && reported) {
+    resultDiv.innerHTML = '<h2 style="color:#2e7d32;">✨ 结局·破局 ✨</h2><p>刑警队按约定在谷雨凌晨突袭老宅，解救林守山，逮捕王长贵与陈阿婆。香椿岭献祭秘密公之于众，仪式永久终止。你和爷爷在老宅外种下一棵新香椿树，春天的阳光终于照进了香椿岭。</p><p style="font-weight:bold;">进度100% · 救赎达成</p>';
+  } else {
+    resultDiv.innerHTML = '<h2 style="color:#8b0000;">💀 结局·献祭 💀</h2><p>你孤身闯入，药婆强行灌下椿引汤。你失去意识前看到爷爷挣脱绳索，冲向你并替代你跳入祭坛火坑。仪式完成，全村沉默。你被送出山，失去记忆。此后每年谷雨夜，老宅都会传出老人的咳嗽声。</p><p style="font-weight:bold;">进度停止 · 被吞噬</p>';
+  }
+}
+</script>
+
+<hr>
+<p><a href="index.html">← 返回首页</a></p>
+
+</body>
+</html>

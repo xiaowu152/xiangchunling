@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>香椿药膳坊 · 深山古法养生</title>
+<style>
+  body {
+    background: #f5f0e8;
+    color: #3a3a3a;
+    font-family: "Microsoft YaHei", "苹方", sans-serif;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    line-height: 1.8;
+  }
+  a {
+    color: #6b8e23;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  input, button {
+    background: #fff;
+    border: 1px solid #8b7355;
+    color: #3a3a3a;
+    padding: 6px 12px;
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  button {
+    cursor: pointer;
+    background: #6b8e23;
+    color: #fff;
+    border: none;
+  }
+  button:hover {
+    background: #556b2f;
+  }
+  .progress {
+    background: #e0d6c8;
+    height: 18px;
+    width: 100%;
+    margin: 10px 0 20px 0;
+    border-radius: 3px;
+  }
+  .progress-bar {
+    background: #8b7355;
+    width: 5%;
+    height: 18px;
+    text-align: center;
+    color: #fff;
+    line-height: 18px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+  hr {
+    border: none;
+    border-top: 1px dashed #c4b59a;
+  }
+  .card {
+    background: #fdfaf5;
+    border: 1px solid #e0d6c8;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="progress"><div class="progress-bar">5%</div></div>
+
+<h1>🌿 香椿药膳坊</h1>
+<p><em>“雨前香椿嫩如丝，谷雨一过成木枝。”</em></p>
+
+<hr>
+
+<h2>
+  🏠 首页 |
+  <a href="about.html">关于我们</a> |
+  <a href="products.html">药膳菜单</a> |
+  <a href="contact.html">联系掌柜</a>
+</h2>
+
+<hr>
+
+<div class="card">
+  <p>欢迎光临香椿药膳坊。本店始于1998年，由老采药人<strong>林守山</strong>创办，专营湘西深山野生香椿及药膳。</p>
+
+  <!-- AI生图占位：香椿岭老宅外观 -->
+  <img src="placeholder_lz.jpg" alt="香椿岭老宅外观"
+  style="width:100%; max-width:600px; margin:15px 0; border:1px solid #c4b59a;"
+  title="Prompt: 一座隐藏在湘西深山雾气中的百年老宅，青砖灰瓦，门楣上挂着'香椿药膳坊'的旧木牌匾，院墙斑驳，几棵野生香椿树从院中探出头来，阴天，湿润的春日午后，中式乡土写实风格，胶片质感，无恐怖元素。">
+
+  <p>近日林掌柜上山采药未归，店铺暂停营业，敬请谅解。</p>
+  <p>🪴 本季推荐：<strong>香椿炒蛋</strong>、<strong>椿芽拌豆腐</strong>、<strong>老母鸡汤炖香椿</strong>（需提前三日预定）。</p>
+  <p>📅 重要提示：<strong>谷雨（4月20日）</strong>前为最佳采摘期，之后香椿含亚硝酸盐升高，不可食用。</p>
+  <p>🔍 本站设有站内搜索，可查阅过往药膳方与山民笔记。</p>
+</div>
+
+<div class="card">
+  <h3>🔎 站内搜索</h3>
+  <input type="text" id="searchInput" placeholder="输入关键词...">
+  <button onclick="search()">搜索</button>
+  <p id="searchResult" style="color:#8b4513; font-size:14px; margin-top:8px;"></p>
+</div>
+
+<script>
+function search() {
+  let kw = document.getElementById('searchInput').value.trim();
+  if(kw === '小李日记' || kw === '日志') location.href = 'employee_log.html';
+  else if(kw === '顾铭') location.href = 'guming_report.html';
+  else if(kw === '2026观测者' || kw === '银河电灯') location.href = 'observer_message.html';
+  else if(kw === '献祭') alert('权限不足。请输入更精确的关键词。');
+  else document.getElementById('searchResult').innerHTML = '未找到相关记录。试试“小李日记”？';
+}
+</script>
+
+<hr>
+
+<p style="font-size:12px;color:#8b7355;">
+  © 香椿药膳坊 · 湘西香椿岭 · 备案号 湘ICP备980422号
+</p>
+
+</body>
+</html>

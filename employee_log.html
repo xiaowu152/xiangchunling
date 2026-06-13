@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>店员日志 · 内部</title>
+<style>
+  body {
+    background: #f5f0e8;
+    color: #3a3a3a;
+    font-family: "Microsoft YaHei", "苹方", sans-serif;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    line-height: 1.8;
+  }
+  a { color: #6b8e23; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  input, button {
+    background: #fff;
+    border: 1px solid #8b7355;
+    color: #3a3a3a;
+    padding: 6px 12px;
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  button { cursor: pointer; background: #6b8e23; color: #fff; border: none; }
+  button:hover { background: #556b2f; }
+  .progress { background: #e0d6c8; height: 18px; width: 100%; margin: 10px 0 20px 0; border-radius: 3px; }
+  .progress-bar { background: #8b7355; width: 20%; height: 18px; text-align: center; color: #fff; line-height: 18px; font-size: 12px; border-radius: 3px; }
+  hr { border: none; border-top: 1px dashed #c4b59a; }
+  .card { background: #fdfaf5; border: 1px solid #e0d6c8; padding: 15px 20px; margin: 20px 0; border-radius: 4px; }
+  .log-entry { background: #faf7f0; border-left: 3px solid #8b7355; padding: 10px 15px; margin: 10px 0; }
+</style>
+</head>
+<body>
+
+<div class="progress"><div class="progress-bar">20%</div></div>
+
+<h1>📔 李远志手写日志</h1>
+
+<div class="card">
+  <p><em>以下内容需密码解锁。提示：去年的香客叫什么？</em></p>
+  <input type="password" id="logPwd" placeholder="输入密码">
+  <button onclick="unlock()">解锁</button>
+</div>
+
+<div id="logContent" style="display:none;">
+  <div class="log-entry">
+    <h3>2026年3月15日</h3>
+    <p>林爷爷三天没回来了。村长说他在山里迷路，但我觉得不对劲。前天晚上我看见药婆陈阿婆从老宅地窖出来，手里端着一碗黑汤。</p>
+  </div>
+  <div class="log-entry">
+    <h3>2026年3月20日</h3>
+    <p>偷听到村长和王叔对话：“雨前献祭不能再拖，老林头不配合，就把那个城里回来的孙女...” 他们发现了林晚姐姐要回来！</p>
+  </div>
+  <div class="log-entry">
+    <h3>2026年3月25日</h3>
+    <p>我找到爷爷留下的旧论坛地址，但需要密码才能进。论坛入口写着：“上年香客，净念方可入。” 去年（上年）有个香客老张，但我不认识。</p>
+    <p>⚠️ 管理员后台地址是 <strong>/admin_backdoor.html</strong> ，密码我知道是香椿拼音+谷雨日，但我不想惹麻烦，不敢进。</p>
+  </div>
+</div>
+
+<script>
+function unlock() {
+  let pwd = document.getElementById('logPwd').value;
+  if(pwd === 'shangnian') {
+    document.getElementById('logContent').style.display = 'block';
+    alert('解锁成功！');
+  } else alert('密码错误。提示：“上年”的拼音。');
+}
+</script>
+
+<hr>
+<p><a href="index.html">← 返回首页</a></p>
+
+</body>
+</html>

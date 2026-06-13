@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>后台管理</title>
+<style>
+  body {
+    background: #f5f0e8;
+    color: #3a3a3a;
+    font-family: "Microsoft YaHei", "苹方", sans-serif;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    line-height: 1.8;
+  }
+  a { color: #6b8e23; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  input, button {
+    background: #fff;
+    border: 1px solid #8b7355;
+    color: #3a3a3a;
+    padding: 6px 12px;
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  button { cursor: pointer; background: #6b8e23; color: #fff; border: none; }
+  button:hover { background: #556b2f; }
+  .progress { background: #e0d6c8; height: 18px; width: 100%; margin: 10px 0 20px 0; border-radius: 3px; }
+  .progress-bar { background: #8b7355; width: 30%; height: 18px; text-align: center; color: #fff; line-height: 18px; font-size: 12px; border-radius: 3px; }
+  hr { border: none; border-top: 1px dashed #c4b59a; }
+  .card { background: #fdfaf5; border: 1px solid #e0d6c8; padding: 15px 20px; margin: 20px 0; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<div class="progress"><div class="progress-bar">30%</div></div>
+
+<h1>🔐 后台管理 · 仅限内部</h1>
+
+<div class="card">
+  <form onsubmit="event.preventDefault();checkPwd()">
+    <input type="password" id="adminPwd" placeholder="后台密码">
+    <button>登录</button>
+  </form>
+</div>
+
+<div id="adminContent" style="display:none;">
+  <div class="card">
+    <h2>📄 《雨前献祭计划·2026》</h2>
+    <p><strong>执行人</strong>：王长贵（村长）、陈阿婆（药婆）</p>
+    <p><strong>目标</strong>：林守山（不配合，已软禁于老宅地窖）</p>
+    <p><strong>备用祭品</strong>：林晚（若归来）</p>
+    <p><strong>仪式时间</strong>：谷雨前夜（4月19日23:00）</p>
+    <p><strong>地点</strong>：老宅后院香椿老母祭坛</p>
+    <p><strong>关键物品</strong>：椿引汤（药婆配方，需“净念草”+“雨前香椿根”）</p>
+  </div>
+  <div class="card">
+    <h3>👥 NPC观察报告</h3>
+    <ul>
+      <li><strong>王长贵</strong>：主持祭礼40年，上一轮献祭（1986年）祭品为村东哑女。</li>
+      <li><strong>陈阿婆</strong>：负责熬制椿引汤，配方藏于她家灶台砖下。</li>
+      <li><strong>小李</strong>：不可信任，已注意到他偷看地窖。</li>
+    </ul>
+  </div>
+  <div class="card">
+    <p>🔗 <a href="guming_report.html">外部调查员顾铭的邮件</a>（需搜索“顾铭”可见）</p>
+    <p>📌 最终仪式入口密码提示：<strong>雨前献祭四个字拼音首字母</strong></p>
+  </div>
+</div>
+
+<script>
+function checkPwd() {
+  let pwd = document.getElementById('adminPwd').value;
+  if(pwd === 'xiangchun0420') {
+    document.getElementById('adminContent').style.display = 'block';
+    alert('登录成功。');
+  } else alert('密码错误。提示：香椿拼音+谷雨日期');
+}
+</script>
+
+<hr>
+<p><a href="index.html">← 返回首页</a></p>
+
+</body>
+</html>

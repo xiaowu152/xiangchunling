@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>顾铭调查笔记</title>
+<style>
+  body {
+    background: #f5f0e8;
+    color: #3a3a3a;
+    font-family: "Microsoft YaHei", "苹方", sans-serif;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    line-height: 1.8;
+  }
+  a { color: #6b8e23; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  textarea, button {
+    background: #fff;
+    border: 1px solid #8b7355;
+    color: #3a3a3a;
+    padding: 6px 12px;
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  button { cursor: pointer; background: #6b8e23; color: #fff; border: none; }
+  button:hover { background: #556b2f; }
+  .progress { background: #e0d6c8; height: 18px; width: 100%; margin: 10px 0 20px 0; border-radius: 3px; }
+  .progress-bar { background: #8b7355; width: 40%; height: 18px; text-align: center; color: #fff; line-height: 18px; font-size: 12px; border-radius: 3px; }
+  hr { border: none; border-top: 1px dashed #c4b59a; }
+  .card { background: #fdfaf5; border: 1px solid #e0d6c8; padding: 15px 20px; margin: 20px 0; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<div class="progress"><div class="progress-bar">40%</div></div>
+
+<h1>📓 顾铭 · 湘西民俗调查笔记（2025）</h1>
+
+<div class="card">
+  <p><em>“菁英会客厅”特邀民俗学者顾铭，2025年曾暗访香椿岭。</em></p>
+  <p>香椿岭存在“香椿老母”邪教献祭，每40年一次。村长王长贵、药婆陈阿婆为实际控制人。2026年谷雨前夜将举行仪式，祭品可能是林守山或其孙女林晚。</p>
+  <p>我已将调查报告提交至湘西州刑警支队。若有家属失踪，可直接通过下方平台举报，直达专案组。</p>
+  <p>⭐ 银河电灯宇宙记录：2026观测者曾预警“香椿岭椿祸”，与菁英会客厅第13期内容吻合。更多信息请搜索“2026观测者”。</p>
+</div>
+
+<div class="card">
+  <h3>🚨 县刑警队网络举报平台</h3>
+  <p>填写以下信息，警方将在谷雨当天凌晨行动。</p>
+  <textarea rows="3" cols="40" placeholder="失踪人员：林守山，地点：香椿岭老宅地窖，时间：4月19日23:00"></textarea><br>
+  <button onclick="submitReport()">📢 提交举报</button>
+  <p id="reportHint" style="font-size:13px; color:#8b7355;">※ 举报后进度条将增加，是好结局的必要条件。</p>
+</div>
+
+<script>
+function submitReport() {
+  document.cookie = "reported=true; path=/; max-age=" + 60*60*24*7;
+  alert('举报已加密发送。刑警队已收到，谷雨日凌晨将突袭。');
+  document.getElementById('reportHint').innerHTML = '✅ 举报成功！进度提升。';
+}
+</script>
+
+<hr>
+<p><a href="index.html">← 返回首页</a></p>
+
+</body>
+</html>
